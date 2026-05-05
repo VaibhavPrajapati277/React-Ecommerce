@@ -119,37 +119,37 @@ function Home() {
             {
                 "id": 2,
                 "Categoriesname": "Women",
-                "image": "https://images.unsplash.com/photo-1520975916090-3105956dac38",
+                "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b",
             },
             {
                 "id": 3,
                 "Categoriesname": "Kids",
-                "image": "https://images.unsplash.com/photo-1520975916090-3105956dac38",
+                "image": "https://images.unsplash.com/photo-1503919545889-aef636e10ad4",
             },
             {
                 "id": 4,
                 "Categoriesname": "Shoes",
-                "image": "https://images.unsplash.com/photo-1520975916090-3105956dac38",
+                "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
             },
             {
                 "id": 5,
                 "Categoriesname": "Watches",
-                "image": "https://images.unsplash.com/photo-1520975916090-3105956dac38",
+                "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314",
             },
             {
                 "id": 6,
                 "Categoriesname": "Sunglasses",
-                "image": "https://images.unsplash.com/photo-1520975916090-3105956dac38",
+                "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083",
             },
             {
                 "id": 7,
                 "Categoriesname": "Sportswear",
-                "image": "https://images.unsplash.com/photo-1520975916090-3105956dac38",
+                "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438",
             },
             {
                 "id": 8,
                 "Categoriesname": "Accessories",
-                "image": "https://images.unsplash.com/photo-1520975916090-3105956dac38",
+                "image": "https://images.unsplash.com/photo-1585386959984-a41552231658",
             },
             {
                 "id": 9,
