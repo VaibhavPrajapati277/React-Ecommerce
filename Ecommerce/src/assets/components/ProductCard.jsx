@@ -1,6 +1,18 @@
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { CartContext } from "../../context/Cartcontext";
+
 function ProductCard({ data }) {
+
+    const navigate = useNavigate();
+
+    const {increment} = useContext(CartContext)
+
     return (
-        <div className="flex flex-col w-full bg-white rounded-lg shadow-md p-3 items-center">
+        <div
+           
+            className="flex flex-col w-full bg-white rounded-lg shadow-md p-3 items-center"
+        >
 
             <img
                 src={data.image}
@@ -9,7 +21,8 @@ function ProductCard({ data }) {
                     e.target.src =
                         "https://images.unsplash.com/photo-1740711152088-88a009e877bb?q=80&w=580&auto=format&fit=crop";
                 }}
-                className="h-32 w-full object-cover rounded"
+                 onClick={() => navigate(`/product/${data.id}`)}
+                className="h-32 w-full object-cover rounded  cursor-pointer"
                 alt={data.name}
             />
 
@@ -31,9 +44,11 @@ function ProductCard({ data }) {
                 </p>
             </div>
 
-            <button className="bg-blue-500 text-white px-4 py-1 mt-2 rounded hover:bg-blue-600 transition w-full">
+            <button
+                onClick={increment}
+            className="bg-blue-500 text-white px-4 py-1 mt-2 rounded  cursor-pointer hover:bg-blue-600 transition w-full">
                 Add to Cart
-            </button>
+            </button>                 
         </div>
     );
 }

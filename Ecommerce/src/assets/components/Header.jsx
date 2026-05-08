@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Bottom from "./Bottom";
 import Footer from "./Footer";
 import Login from "./Login";
 
 import { Link, useNavigate } from "react-router-dom";
+import { CartContext } from "../../context/Cartcontext";
 
 function Header() {
 
@@ -12,6 +13,9 @@ function Header() {
     const [showSearch, setShowSearch] = useState(false);
     const [cartOpen, setCartOpen] = useState(false);
     const [cartCount, setCartCount] = useState(0);
+
+    const {num} = useContext(CartContext)
+
 
 
     return (
@@ -64,12 +68,12 @@ function Header() {
                         
                         {/* Badge */}
                         <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
-                            {cartCount}
+                            {num}
                         </span>
                         </div>
                         {cartOpen && (
                             <div
-                                className="fixed inset-0 bg-black/40 z-40"
+                                className=" fixed inset-0 bg-black/40 z-40"
                                 onClick={() => setCartOpen(false)}
                             />
                         )}
@@ -81,7 +85,7 @@ function Header() {
                         >
                             <div className="p-4 flex justify-between items-center border-b">
                                 <h2 className="text-lg font-semibold">Your Cart</h2>
-                                <button onClick={() => setCartOpen(false)}>✕</button>
+                                <button className="cursor-pointer"  onClick={() => setCartOpen(false)}>✕</button>
                             </div>
 
                             <div className="p-4">

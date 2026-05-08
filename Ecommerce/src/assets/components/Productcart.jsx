@@ -51,7 +51,7 @@ function Productcart({ title, data = [] }) {
             setCurrentIndex((prev) =>
                 prev === totalSlides - 1 ? 0 : prev + 1
             );
-        }, 5000);
+        }, 7000);
 
         return () => clearInterval(interval);
     }, [totalSlides]);
