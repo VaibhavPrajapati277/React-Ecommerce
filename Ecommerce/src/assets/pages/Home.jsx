@@ -371,12 +371,9 @@ function Home() {
             {/* <Footer /> */}
 
 
-            {/* <Login /> */}
+            
             <Bottom />
-            {/* <Signup /> */}
-            {/* <Resetpass /> */}
-            {/* <Footer />   */}
-            {/* <Check /> */}
+          
 
         </>
     )

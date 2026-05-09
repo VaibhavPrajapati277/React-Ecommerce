@@ -7,7 +7,11 @@ function ProductCard({ data }) {
     const navigate = useNavigate();
 
     const {increment} = useContext(CartContext)
-
+    const {getdata} = useContext(CartContext)
+    const handelclick = ()=>{
+        increment();
+        getdata(data);
+    }
     return (
         <div
            
@@ -45,7 +49,7 @@ function ProductCard({ data }) {
             </div>
 
             <button
-                onClick={increment}
+                onClick={handelclick}
             className="bg-blue-500 text-white px-4 py-1 mt-2 rounded  cursor-pointer hover:bg-blue-600 transition w-full">
                 Add to Cart
             </button>                 

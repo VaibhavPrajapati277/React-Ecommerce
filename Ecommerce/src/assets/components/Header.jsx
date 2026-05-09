@@ -15,11 +15,11 @@ function Header() {
     const [cartCount, setCartCount] = useState(0);
 
     const {num} = useContext(CartContext)
+    const {data} = useContext(CartContext)
 
-
+    console.log(data);
 
     return (
-
         <>
             <header className="sticky top-0 z-50 bg-white shadow-md">
                 <div className="px-8 py-4 flex items-center justify-between">
