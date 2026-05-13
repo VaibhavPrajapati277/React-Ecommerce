@@ -14,8 +14,10 @@ function Header() {
     const [cartOpen, setCartOpen] = useState(false);
     const [cartCount, setCartCount] = useState(0);
 
-    const {num} = useContext(CartContext)
-    const {data} = useContext(CartContext)
+    const { num } = useContext(CartContext)
+    const { data } = useContext(CartContext)
+    const { increaseQty, decreaseQty } =
+        useContext(CartContext);
 
     console.log(data);
 
@@ -58,18 +60,18 @@ function Header() {
                             </div>
                         )}
                         <div className="relative">
-                        {/* cart button */}
-                        <button onClick={() => setCartOpen(true)}
-                            className="px-4 py-2 border  rounded-lg text-black-500 cursor-pointer  ">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
-                                <path fillRule="evenodd" d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 0 0 4.25 22.5h15.5a1.875 1.875 0 0 0 1.865-2.071l-1.263-12a1.875 1.875 0 0 0-1.865-1.679H16.5V6a4.5 4.5 0 1 0-9 0ZM12 3a3 3 0 0 0-3 3v.75h6V6a3 3 0 0 0-3-3Zm-3 8.25a3 3 0 1 0 6 0v-.75a.75.75 0 0 1 1.5 0v.75a4.5 4.5 0 1 1-9 0v-.75a.75.75 0 0 1 1.5 0v.75Z" clipRule="evenodd" />
-                            </svg>
-                        </button>
-                        
-                        {/* Badge */}
-                        <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
-                            {num}
-                        </span>
+                            {/* cart button */}
+                            <button onClick={() => setCartOpen(true)}
+                                className="px-4 py-2 border  rounded-lg text-black-500 cursor-pointer  ">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
+                                    <path fillRule="evenodd" d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 0 0 4.25 22.5h15.5a1.875 1.875 0 0 0 1.865-2.071l-1.263-12a1.875 1.875 0 0 0-1.865-1.679H16.5V6a4.5 4.5 0 1 0-9 0ZM12 3a3 3 0 0 0-3 3v.75h6V6a3 3 0 0 0-3-3Zm-3 8.25a3 3 0 1 0 6 0v-.75a.75.75 0 0 1 1.5 0v.75a4.5 4.5 0 1 1-9 0v-.75a.75.75 0 0 1 1.5 0v.75Z" clipRule="evenodd" />
+                                </svg>
+                            </button>
+
+                            {/* Badge */}
+                            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
+                                {num}
+                            </span>
                         </div>
                         {cartOpen && (
                             <div
@@ -85,11 +87,78 @@ function Header() {
                         >
                             <div className="p-4 flex justify-between items-center border-b">
                                 <h2 className="text-lg font-semibold">Your Cart</h2>
-                                <button className="cursor-pointer"  onClick={() => setCartOpen(false)}>✕</button>
+                                <button className="cursor-pointer" onClick={() => setCartOpen(false)}>✕</button>
                             </div>
 
-                            <div className="p-4">
-                                <p className="text-gray-500">Your cart is empty</p>
+                            <div className="p-4 space-y-4 overflow-y-auto h-[75%]">
+
+                                {
+                                    data.length === 0 ? (
+
+                                        <p className="text-gray-500">
+                                            Your cart is empty
+                                        </p>
+
+                                    ) : (
+
+                                        data.map((item) => (
+
+                                            <div
+                                                key={item.id}
+                                                className="flex gap-3 border-b pb-3"
+                                            >
+
+                                                <img
+                                                    src={item.image}
+                                                    alt=""
+                                                    className="w-20 h-20 object-cover rounded"
+                                                />
+
+                                                <div>
+
+                                                    <h3 className="font-semibold">
+                                                        {item.brand}
+                                                    </h3>
+
+                                                    <p className="text-sm">
+                                                        {item.name}
+                                                    </p>
+
+                                                    <p className="text-blue-600 font-bold">
+                                                        ₹{item.price}
+                                                    </p>
+
+                                                    <p className="text-sm">
+                                                        Qty : {item.quantity}
+                                                    </p>
+
+                                                    <div className="flex items-center gap-3 mt-2">
+
+                                                        <button
+                                                            onClick={() => decreaseQty(item.id)}
+                                                            className="px-2 bg-gray-200 rounded cursor-pointer"
+                                                        >
+                                                            -
+                                                        </button>
+
+                                                        <span>{item.quantity}</span>
+
+                                                        <button
+                                                            onClick={() => increaseQty(item.id)}
+                                                            className="px-2 bg-gray-200 rounded cursor-pointer"
+                                                        >
+                                                            +
+                                                        </button>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        ))
+                                    )
+                                }
+
                             </div>
 
                             <div className="absolute bottom-0 w-full p-4 border-t">
@@ -122,70 +191,7 @@ function Header() {
                     </nav>
                 )}
             </header>
-            {/* <div id="Log-in" className="min-h-screen flex items-center justify-center bg-gray-100" tabIndex="-1" aria-hidden="true" className="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full" >
-                <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
-
-                  
-                    <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
-                        Login to your account
-                    </h2>
-
-                    
-                    <form className="space-y-5">
-
-                     
-                        <div>
-                            <label className="block text-gray-600 mb-1">Email</label>
-                            <input
-                                type="email"
-                                placeholder="Enter your email"
-                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                            />
-                        </div>
-
-                     
-                        <div>
-                            <label className="block text-gray-600 mb-1">Password</label>
-                            <input
-                                type="password"
-                                placeholder="Enter your password"
-                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                            />
-                        </div>
-
-                    
-                        <div className="flex items-center justify-between text-sm">
-                            <label className="flex items-center space-x-2">
-                                <input type="checkbox" />
-                                <span>Remember me</span>
-                            </label>
-                            <a href="#" className="text-blue-500 hover:underline">
-                                Forgot password?
-                            </a>
-                        </div>
-
-                      
-                        <button
-                            type="submit"
-                            className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-200"
-                        >
-                            Login
-                        </button>
-                    </form>
-
-                    
-                    <p className="text-center text-gray-600 text-sm mt-6">
-                        Don't have an account?{" "}
-                        <a href="#" className="text-blue-500 hover:underline">
-                            Sign up
-                        </a>
-                    </p>
-                </div>
-            </div> */}
-
-
-
-
+            
 
         </>
     )

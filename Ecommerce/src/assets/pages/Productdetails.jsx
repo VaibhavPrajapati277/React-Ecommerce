@@ -25,6 +25,12 @@ function Productdetails() {
         return <h1>Product Not Found</h1>;
     }
 
+    const { getdata } = useContext(CartContext)
+    const handelclick = () => {
+        increment();
+        getdata(data);
+    }
+
     return (
 
         <div className="p-10">
@@ -63,45 +69,45 @@ function Productdetails() {
                         <button className="bg-blue-500 text-white px-6 py-2 rounded mt-5 cursor-pointer">
                             Buy Now
                         </button>
-                        <button onClick={increment} className="bg-blue-500 text-white px-6 py-2 rounded mt-5 cursor-pointer">
+                        <button className="bg-blue-500 text-white px-6 py-2 rounded mt-5 cursor-pointer">
                             Add to Cart
                         </button>
                     </div>
 
-                    <div class="space-y-4 mt-4">
+                    <div className="space-y-4 mt-4">
 
-                        <h2 class="text-2xl font-semibold text-gray-900">
+                        <h2 className="text-2xl font-semibold text-gray-900">
                             Select Size
                         </h2>
 
 
-                        <div class="flex items-center gap-3 ">
+                        <div className="flex items-center gap-3 ">
 
                             <button
-                                class="h-12 min-w-[48px] rounded-md border border-gray-500 px-4 text-lg font-medium text-gray-800 transition hover:border-black cursor-pointer"
+                                className="h-12 min-w-[48px] rounded-md border border-gray-500 px-4 text-lg font-medium text-gray-800 transition hover:border-black cursor-pointer"
                             >
                                 S
                             </button>
                             <button
-                                class="h-12 min-w-[48px] rounded-md border border-gray-500 px-4 text-lg font-medium text-gray-800 transition hover:border-black cursor-pointer"
+                                className="h-12 min-w-[48px] rounded-md border border-gray-500 px-4 text-lg font-medium text-gray-800 transition hover:border-black cursor-pointer"
                             >
                                 M
                             </button>
 
                             <button
-                                class="h-12 min-w-[48px] rounded-md border border-gray-500 px-4 text-lg font-medium text-gray-800 transition hover:border-black cursor-pointer"
+                                className="h-12 min-w-[48px] rounded-md border border-gray-500 px-4 text-lg font-medium text-gray-800 transition hover:border-black cursor-pointer"
                             >
                                 L
                             </button>
 
                             <button
-                                class="h-12 min-w-[60px] rounded-md border border-gray-500 px-4 text-lg font-medium text-gray-800 transition hover:border-black cursor-pointer"
+                                className="h-12 min-w-[60px] rounded-md border border-gray-500 px-4 text-lg font-medium text-gray-800 transition hover:border-black cursor-pointer"
                             >
                                 XL
                             </button>
 
                             <button
-                                class="h-12 min-w-[72px] rounded-md border border-gray-500 px-4 text-lg font-medium text-gray-800 transition hover:border-black cursor-pointer"
+                                className="h-12 min-w-[72px] rounded-md border border-gray-500 px-4 text-lg font-medium text-gray-800 transition hover:border-black cursor-pointer"
                             >
                                 XXL
                             </button>

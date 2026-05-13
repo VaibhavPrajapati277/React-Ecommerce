@@ -6,29 +6,35 @@ import Home from './assets/pages/Home'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import Productdetails from './assets/pages/Productdetails'
 import CartProvider from './context/Cartcontext'
-
+import { Toaster } from "react-hot-toast";
+// import Cart from '../'
+import Cart from "./assets/pages/Cart";
 function App() {
 
-  
+
   return (
-    
+
     <>
+
+      <Toaster position="top-right" />
       <CartProvider>
 
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={
-            
-            <Home />
-            
-          } /> 
-          <Route path="/login" element={<Login />} />  
-          <Route path="/signup" element={<Signup />} />  
-          <Route path="/reset" element={<Resetpass />} />  
-           <Route path="/product/:id" element={<Productdetails />} />
-        </Routes>
-      </BrowserRouter>
-          </CartProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={
+
+              <Home />
+
+            } />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/reset" element={<Resetpass />} />
+            <Route path="/product/:id" element={<Productdetails />} />
+            <Route path="/cart" element={Cart} />
+
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
     </>
   )
 }
