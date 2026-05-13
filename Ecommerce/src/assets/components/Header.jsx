@@ -5,6 +5,7 @@ import Login from "./Login";
 
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/Cartcontext";
+import Cart from "../pages/Cart";
 
 function Header() {
 
@@ -70,7 +71,7 @@ function Header() {
 
                             {/* Badge */}
                             <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
-                                {num}
+                                {data.length}
                             </span>
                         </div>
                         {cartOpen && (
@@ -101,61 +102,7 @@ function Header() {
 
                                     ) : (
 
-                                        data.map((item) => (
-
-                                            <div
-                                                key={item.id}
-                                                className="flex gap-3 border-b pb-3"
-                                            >
-
-                                                <img
-                                                    src={item.image}
-                                                    alt=""
-                                                    className="w-20 h-20 object-cover rounded"
-                                                />
-
-                                                <div>
-
-                                                    <h3 className="font-semibold">
-                                                        {item.brand}
-                                                    </h3>
-
-                                                    <p className="text-sm">
-                                                        {item.name}
-                                                    </p>
-
-                                                    <p className="text-blue-600 font-bold">
-                                                        ₹{item.price}
-                                                    </p>
-
-                                                    <p className="text-sm">
-                                                        Qty : {item.quantity}
-                                                    </p>
-
-                                                    <div className="flex items-center gap-3 mt-2">
-
-                                                        <button
-                                                            onClick={() => decreaseQty(item.id)}
-                                                            className="px-2 bg-gray-200 rounded cursor-pointer"
-                                                        >
-                                                            -
-                                                        </button>
-
-                                                        <span>{item.quantity}</span>
-
-                                                        <button
-                                                            onClick={() => increaseQty(item.id)}
-                                                            className="px-2 bg-gray-200 rounded cursor-pointer"
-                                                        >
-                                                            +
-                                                        </button>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-                                        ))
+                                       <Cart />
                                     )
                                 }
 

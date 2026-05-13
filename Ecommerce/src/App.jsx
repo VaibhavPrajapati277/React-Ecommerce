@@ -16,7 +16,7 @@ function App() {
 
     <>
 
-      <Toaster position="top-right" />
+      <Toaster position="bottom-right" />
       <CartProvider>
 
         <BrowserRouter>
