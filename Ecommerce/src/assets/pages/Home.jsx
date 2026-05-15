@@ -339,7 +339,8 @@ function Home() {
             {
                 "id": 208,
                 "Categoriesname": "Accessories",
-                "image": "https://images.unsplash.com/photo-1585386959984-a41552231658",
+                "image":"https://images.unsplash.com/photo-1505740420928-5e560c06d30e"
+,
             },
             {
                 "id": 209,
