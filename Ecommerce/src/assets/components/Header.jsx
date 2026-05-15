@@ -21,6 +21,16 @@ function Header() {
         useContext(CartContext);
 
     console.log(data);
+    
+    const totalPrice = data.reduce(
+
+        (total, item) =>
+
+            total + (item.price * item.quantity),
+
+        0
+    );
+
 
     return (
         <>
@@ -115,10 +125,32 @@ function Header() {
 
                             </div>
 
-                            <div className="absolute bottom-0 w-full p-4 border-t">
+                            {/* <div className="absolute bottom-0 w-full p-4 border-t">
                                 <button className="w-full bg-blue-600 text-white py-2 rounded-lg">
                                     Checkout
                                 </button>
+                            </div> */}
+
+                            <div className="absolute bottom-0 w-full p-4 border-t bg-white">
+
+                                <div className="flex justify-between mb-3">
+
+                                    <span className="font-semibold">
+                                        Total
+                                    </span>
+
+                                    <span className="font-bold text-blue-600">
+                                        ₹{totalPrice}
+                                    </span>
+
+                                </div>
+
+                                <button
+                                    className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition cursor-pointer"
+                                >
+                                    Checkout
+                                </button>
+
                             </div>
                         </div>
 
