@@ -15,8 +15,8 @@ function App() {
   return (
 
     <>
+      <Toaster position={window.innerWidth < 768 ? "top-right" : "bottom-right"} />
 
-      <Toaster position="bottom-right" />
       <CartProvider>
 
         <BrowserRouter>
