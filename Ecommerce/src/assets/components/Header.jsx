@@ -72,6 +72,13 @@ function Header() {
                             {/* Badge */}
                             <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
                                 {data.length}
+
+                                {/* {
+                                    data.reduce(
+                                        (total, item) => total + item.quantity,
+                                        0
+                                    )
+                                } */}
                             </span>
                         </div>
                         {cartOpen && (
@@ -102,7 +109,7 @@ function Header() {
 
                                     ) : (
 
-                                       <Cart />
+                                        <Cart />
                                     )
                                 }
 
@@ -138,7 +145,7 @@ function Header() {
                     </nav>
                 )}
             </header>
-            
+
 
         </>
     )

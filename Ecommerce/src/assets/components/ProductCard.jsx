@@ -6,15 +6,26 @@ function ProductCard({ data }) {
 
     const navigate = useNavigate();
 
-    const {increment} = useContext(CartContext)
-    const {getdata} = useContext(CartContext)
-    const handelclick = ()=>{
-        increment();
-        getdata(data);
-    }
+    // const {increment} = useContext(CartContext)
+    // const {getdata} = useContext(CartContext)
+    // const handelclick = ()=>{
+    //     increment();
+    //     getdata(data);
+    // }
+
+    const {
+        getdata,
+        increaseQty,
+        decreaseQty,
+        data: cartData
+    } = useContext(CartContext);
+
+    const cartItem = cartData.find(
+        (item) => item.id === data.id
+    );
     return (
         <div
-           
+
             className="flex flex-col w-full bg-white rounded-lg shadow-md p-3 items-center"
         >
 
@@ -25,7 +36,7 @@ function ProductCard({ data }) {
                     e.target.src =
                         "https://images.unsplash.com/photo-1740711152088-88a009e877bb?q=80&w=580&auto=format&fit=crop";
                 }}
-                 onClick={() => navigate(`/product/${data.id}`)}
+                onClick={() => navigate(`/product/${data.id}`)}
                 className="h-32 w-full object-cover rounded  cursor-pointer"
                 alt={data.name}
             />
@@ -47,12 +58,49 @@ function ProductCard({ data }) {
                     {data.discount}
                 </p>
             </div>
-
-            <button
+            {/* add to cart button with toggle UI */}
+            {/* <button
                 onClick={handelclick}
-            className="bg-blue-500 text-white px-4 py-1 mt-2 rounded  cursor-pointer hover:bg-blue-600 transition w-full">
+                className="bg-blue-500 text-white px-4 py-1 mt-2 rounded  cursor-pointer hover:bg-blue-600 transition w-full">
                 Add to Cart
-            </button>                 
+            </button> */}
+
+            {
+                cartItem ? (
+
+                    <div className="flex items-center justify-between w-full mt-2 gap-2">
+
+                        <button
+                            onClick={() => decreaseQty(data.id)}
+                            className="bg-gray-200 px-3 py-1 rounded cursor-pointer"
+                        >
+                            -
+                        </button>
+
+                        <span className="font-semibold">
+                            {cartItem.quantity}
+                        </span>
+
+                        <button
+                            onClick={() => increaseQty(data.id)}
+                            className="bg-blue-500 text-white px-3 py-1 rounded cursor-pointer"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                ) : (
+
+                    <button
+                        onClick={() => getdata(data)}
+                        className="bg-blue-500 text-white px-4 py-1 mt-2 rounded cursor-pointer hover:bg-blue-600 transition w-full"
+                    >
+                        Add to Cart
+                    </button>
+
+                )
+            }
         </div>
     );
 }

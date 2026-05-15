@@ -6,17 +6,15 @@ export const CartContext = createContext()
 
 const CartProvider = ({ children }) => {
 
-    const [num, setNum] = useState(0)
+    // const [num, setNum] = useState(0)
     const [data, setData] = useState([]);
-    const increment = () => {
+    // const increment = () => {
+    //     setNum(num + 1)
+    // }
 
-        setNum(num + 1)
-
-    }
-
-    const decrement = () => {
-        setNum(num - 1)
-    }
+    // const decrement = () => {
+    //     setNum(num - 1)
+    // }
 
     const getdata = (productDetails) => {
         setData((prevData) => {
@@ -41,7 +39,9 @@ const CartProvider = ({ children }) => {
     };
 
     // Increase Quantity
-    const increaseQty = (id) => {   
+    const increaseQty = (id) => {
+
+        toast.success("Quantity Increased");
 
         const updatedData = data.map((item) =>
 
@@ -52,14 +52,23 @@ const CartProvider = ({ children }) => {
                 }
                 : item
         );
-        
+
         setData(updatedData);
     };
-     const decreaseQty = (id) => {
+    const decreaseQty = (id) => {
+
+        const existingItem = data.find(
+            (item) => item.id === id
+        );
+
+        if (existingItem.quantity === 1) {
+            toast.error("Item Removed");
+        } else {
+            toast.success("Quantity Decreased");
+        }
 
         const updatedData = data
             .map((item) =>
-
                 item.id === id
                     ? {
                         ...item,
@@ -79,11 +88,11 @@ const CartProvider = ({ children }) => {
 
         <CartContext.Provider
             value={{
-                increment,
-                decrement,
+                // increment,
+                // decrement,
                 getdata,
                 data,
-                num,
+                // num,
                 increaseQty,
                 decreaseQty
             }}
