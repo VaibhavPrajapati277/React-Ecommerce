@@ -369,7 +369,7 @@ function Home() {
             <Productcart title="women" data={womendata}  />
             <Productcart title="kids" data={kidsdata}  />
             {/* <Productcart title="kids" data={kidsdata} setfunction={setKidsData} /> */}
-            {/* <Footer /> */}
+            <Footer />
 
 
             

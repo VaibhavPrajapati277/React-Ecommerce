@@ -3,12 +3,18 @@ import { mendata, womendata, kidsdata } from "../../Data/Data";
 import { CartContext } from "../../context/Cartcontext";
 import { useContext } from "react";
 
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Bottom from "../components/Bottom";
+
 function Productdetails() {
 
     const { id } = useParams();
-    const { increment } = useContext(CartContext)
 
-
+    const {
+        getdata,
+        data: cartData
+    } = useContext(CartContext);
 
     const allProducts = [
         ...mendata,
@@ -19,107 +25,177 @@ function Productdetails() {
     const product = allProducts.find(
         (item) => item.id === Number(id)
     );
-    // console.log(id);
-    // console.log(allProducts);
+
     if (!product) {
-        return <h1>Product Not Found</h1>;
+        return (
+            <h1 className="text-center text-2xl mt-10">
+                Product Not Found
+            </h1>
+        );
     }
 
-    const { getdata } = useContext(CartContext)
-    const handelclick = () => {
-        increment();
-        getdata(data);
-    }
+    const cartItem = cartData.find(
+        (item) => item.id === Number(id)
+    );
 
     return (
+        <>
+            <Header />
 
-        <div className="p-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
-                <img
-                    src={product.image}
-                    className="w-200 h-130 rounded-lg"
-                    alt=""
-                />
+                    {/* Product Image */}
+                    <div className="w-full">
 
-                <div>
-                    <h1 className="text-3xl font-bold">
-                        {product.brand}
-                    </h1>
+                        <img
+                            src={product.image}
+                            alt={product.name}
+                            className="
+                                w-full
+                                h-[300px]
+                                sm:h-[450px]
+                                md:h-[550px]
+                                object-cover
+                                rounded-xl
+                                shadow-md
+                            "
+                        />
 
-                    <p className="text-gray-500 mt-2">
-                        {product.name}
-                    </p>
-
-                    <div className="flex gap-3 mt-4 items-center">
-                        <p className="text-2xl font-bold">
-                            ₹{product.price}
-                        </p>
-
-                        <p className="line-through text-gray-400">
-                            ₹{product.originalPrice}
-                        </p>
-
-                        <p className="text-green-500">
-                            {product.discount}
-                        </p>
-                    </div>
-                    <div className="flex gap-4 items-center">
-                        <button className="bg-blue-500 text-white px-6 py-2 rounded mt-5 cursor-pointer">
-                            Buy Now
-                        </button>
-                        <button className="bg-blue-500 text-white px-6 py-2 rounded mt-5 cursor-pointer">
-                            Add to Cart
-                        </button>
                     </div>
 
-                    <div className="space-y-4 mt-4">
+                    {/* Product Details */}
+                    <div className="w-full">
 
-                        <h2 className="text-2xl font-semibold text-gray-900">
-                            Select Size
-                        </h2>
+                        <h1 className="text-3xl md:text-4xl font-bold">
+                            {product.brand}
+                        </h1>
 
+                        <p className="text-gray-500 mt-3 text-lg">
+                            {product.name}
+                        </p>
 
-                        <div className="flex items-center gap-3 ">
+                        {/* Price Section */}
+                        <div className="flex flex-wrap items-center gap-3 mt-5">
+
+                            <p className="text-3xl font-bold text-black">
+                                ₹{product.price}
+                            </p>
+
+                            <p className="line-through text-gray-400 text-lg">
+                                ₹{product.originalPrice}
+                            </p>
+
+                            <p className="text-green-600 font-semibold">
+                                {product.discount}
+                            </p>
+
+                        </div>
+
+                        {/* Buttons */}
+                        <div className="
+                            flex
+                            flex-col
+                            sm:flex-row
+                            gap-4
+                            mt-6
+                        ">
 
                             <button
-                                className="h-12 min-w-[48px] rounded-md border border-gray-500 px-4 text-lg font-medium text-gray-800 transition hover:border-black cursor-pointer"
+                                className="
+                                    bg-blue-600
+                                    hover:bg-blue-700
+                                    text-white
+                                    px-6
+                                    py-3
+                                    rounded-lg
+                                    transition
+                                    cursor-pointer
+                                    w-full
+                                    sm:w-auto
+                                "
                             >
-                                S
+                                Buy Now
                             </button>
-                            <button
-                                className="h-12 min-w-[48px] rounded-md border border-gray-500 px-4 text-lg font-medium text-gray-800 transition hover:border-black cursor-pointer"
-                            >
-                                M
-                            </button>
 
                             <button
-                                className="h-12 min-w-[48px] rounded-md border border-gray-500 px-4 text-lg font-medium text-gray-800 transition hover:border-black cursor-pointer"
+                                onClick={() => getdata(product)}
+                                className="
+                                    bg-black
+                                    hover:bg-gray-800
+                                    text-white
+                                    px-6
+                                    py-3
+                                    rounded-lg
+                                    transition
+                                    cursor-pointer
+                                    w-full
+                                    sm:w-auto
+                                "
                             >
-                                L
-                            </button>
-
-                            <button
-                                className="h-12 min-w-[60px] rounded-md border border-gray-500 px-4 text-lg font-medium text-gray-800 transition hover:border-black cursor-pointer"
-                            >
-                                XL
-                            </button>
-
-                            <button
-                                className="h-12 min-w-[72px] rounded-md border border-gray-500 px-4 text-lg font-medium text-gray-800 transition hover:border-black cursor-pointer"
-                            >
-                                XXL
+                                Add to Cart
                             </button>
 
                         </div>
-                    </div>
 
+                        {/* Cart Quantity */}
+                        {
+                            cartItem && (
+                                <p className="mt-4 text-green-600 font-medium">
+                                    Added to cart ({cartItem.quantity})
+                                </p>
+                            )
+                        }
+
+                        {/* Size Section */}
+                        <div className="mt-10">
+
+                            <h2 className="text-2xl font-semibold mb-5">
+                                Select Size
+                            </h2>
+
+                            <div className="flex flex-wrap gap-3">
+
+                                {
+                                    ["S", "M", "L", "XL", "XXL"].map((size) => (
+                                        <button
+                                            key={size}
+                                            className="
+                                                h-12
+                                                min-w-[56px]
+                                                px-4
+                                                rounded-md
+                                                border
+                                                border-gray-400
+                                                text-lg
+                                                font-medium
+                                                hover:border-black
+                                                hover:bg-black
+                                                hover:text-white
+                                                transition
+                                                cursor-pointer
+                                            "
+                                        >
+                                            {size}
+                                        </button>
+                                    ))
+                                }
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
             </div>
-        </div>
+
+            <Footer />
+            <Bottom />
+            
+        </>
     );
 }
 

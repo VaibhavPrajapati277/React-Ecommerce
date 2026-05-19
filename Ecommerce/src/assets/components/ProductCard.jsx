@@ -25,7 +25,6 @@ function ProductCard({ data }) {
     );
     return (
         <div
-
             className="flex flex-col w-full bg-white rounded-lg shadow-md p-3 items-center"
         >
 
