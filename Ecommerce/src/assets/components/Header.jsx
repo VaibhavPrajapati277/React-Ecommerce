@@ -21,7 +21,7 @@ function Header() {
         useContext(CartContext);
 
     console.log(data);
-    
+
     const totalPrice = data.reduce(
 
         (total, item) =>
@@ -30,6 +30,15 @@ function Header() {
 
         0
     );
+
+    const handleclick = () => {
+        if (data.length>0) {
+            navigate('/checkout')
+            
+        } else {
+            window.alert("Your Cart is empty.")
+        }
+    }
 
 
     return (
@@ -147,6 +156,7 @@ function Header() {
 
                                 <button
                                     className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition cursor-pointer"
+                                    onClick={handleclick}
                                 >
                                     Checkout
                                 </button>

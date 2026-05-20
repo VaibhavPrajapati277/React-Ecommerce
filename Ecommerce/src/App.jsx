@@ -9,6 +9,9 @@ import CartProvider from './context/Cartcontext'
 import { Toaster } from "react-hot-toast";
 // import Cart from '../'
 import Cart from "./assets/pages/Cart";
+
+import Checkout from './assets/pages/Checkout'
+import Address from './assets/components/Address'
 function App() {
 
 
@@ -31,6 +34,8 @@ function App() {
             <Route path="/reset" element={<Resetpass />} />
             <Route path="/product/:id" element={<Productdetails />} />
             <Route path="/cart" element={Cart} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/address" element={<Address />} />
 
           </Routes>
         </BrowserRouter>
