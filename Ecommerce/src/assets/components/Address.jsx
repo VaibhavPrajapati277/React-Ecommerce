@@ -1,129 +1,123 @@
-import React from "react";
+import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 const Address = () => {
+
+    const [type, setType] = useState("home");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        toast.success("Address Saved!", {
+            style: {
+                borderRadius: '12px',
+                background: '#000',
+                color: '#fff',
+            },
+        });
+    };
+
     return (
-        <div className="w-full bg-white p-6 rounded-xl shadow-md">
-            <h2 className="text-2xl font-semibold mb-6">Delivery Address</h2>
+        <div className="bg-white shadow-sm p-5">
 
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="flex items-center justify-between mb-5">
+                <h2 className="text-xl font-semibold">
+                    Delivery Address
+                </h2>
 
-                {/* Full Name */}
-                <div>
-                    <label className="block text-gray-700 mb-2">
-                        Full Name *
-                    </label>
+                <span className="text-sm text-gray-500">
+                    Fast Delivery
+                </span>
+
+            </div>
+
+            <form className="space-y-4" onSubmit={handleSubmit}>
+
+                {/* Name + Mobile */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
                     <input
                         type="text"
+                        placeholder="Full Name"
                         required
-                        placeholder="Enter full name"
-                        className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-blue-500"
+                        className="border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-black outline-none"
                     />
-                </div>
 
-                {/* Mobile Number */}
-                <div>
-                    <label className="block text-gray-700 mb-2 ">
-                        Mobile Number *
-                    </label>
                     <input
                         type="text"
+                        placeholder="Mobile Number"
                         required
-                        placeholder="Enter mobile number"
-                        className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-blue-500"
+                        className="border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-black outline-none"
                     />
                 </div>
 
-                {/* Pincode */}
-                <div>
-                    <label className="block text-gray-700 mb-2">
-                        Pincode *
-                    </label>
+                {/* Pincode + City */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
                     <input
                         type="text"
+                        placeholder="Pincode"
                         required
-                        placeholder="Enter pincode"
-                        className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-blue-500"
+                        className="border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-black outline-none"
                     />
-                </div>
 
-                {/* City */}
-                <div>
-                    <label className="block text-gray-700 mb-2">
-                        City *
-                    </label>
                     <input
                         type="text"
-                        required
-                        placeholder="Enter city"
-                        className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-blue-500"
-                    />
-                </div>
-
-                {/* State */}
-                <div>
-                    <label className="block text-gray-700 mb-2">
-                        State
-                    </label>
-                    <input
-                        type="text"
-                        placeholder="Enter state"
-                        className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-blue-500"
-                    />
-                </div>
-
-                {/* Landmark */}
-                <div>
-                    <label className="block text-gray-700 mb-2">
-                        Landmark
-                    </label>
-                    <input
-                        type="text"
-                        placeholder="Nearby landmark"
-                        className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-blue-500"
+                        placeholder="City"
+                        className="border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-black outline-none"
                     />
                 </div>
 
                 {/* Address */}
-                <div className="md:col-span-2">
-                    <label className="block text-gray-700 mb-2">
-                        Full Address *
-                    </label>
-                    <textarea
-                        rows="4"
-                        required
-                        placeholder="Enter full address"
-                        className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-blue-500"
-                    ></textarea>
-                </div>
+                <textarea
+                    rows="3"
+                    placeholder="House no, Area, Street..."
+                    className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-black outline-none"
+                ></textarea>
 
                 {/* Address Type */}
-                <div className="md:col-span-2">
-                    <label className="block text-gray-700 mb-3">
-                        Address Type
-                    </label>
+                <div className="flex gap-3">
 
-                    <div className="flex gap-6">
-                        <label className="flex items-center gap-2">
-                            <input type="radio" name="type" />
-                            Home
-                        </label>
-
-                        <label className="flex items-center gap-2">
-                            <input type="radio" name="type" />
-                            Office
-                        </label>
-                    </div>
-                </div>
-
-                {/* Button */}
-                <div className="md:col-span-2">
                     <button
-                        type="submit"
-                        className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition"
+                        type="button"
+                        onClick={() => setType("home")}
+                        className={`px-5 py-2 rounded-full border transition
+                                
+                                ${type === "home"
+                                ? "bg-black text-white border-black"
+                                : "bg-white text-black border-gray-300"
+                            }
+                            `}
                     >
-                        Save Address
+                        Home
+                    </button>
+
+                    {/* Office */}
+                    <button
+                        type="button"
+                        onClick={() => setType("office")}
+                        className={`px-5 py-2 rounded-full border transition
+                                
+                                ${type === "office"
+                                ? "bg-black text-white border-black"
+                                : "bg-white text-black border-gray-300"
+                            }
+                            `}
+                    >
+                        Office
                     </button>
                 </div>
+
+                {/* Save Button */}
+                <button
+                    type="submit"
+
+                    className="w-full bg-black hover:bg-gray-800 text-white py-3 rounded-xl font-medium transition"
+                >
+                    Save Address
+
+                </button>
+
             </form>
         </div>
     );

@@ -12,6 +12,7 @@ import Cart from "./assets/pages/Cart";
 
 import Checkout from './assets/pages/Checkout'
 import Address from './assets/components/Address'
+import OrderSuccess from './assets/components/OrderSuccess'
 function App() {
 
 
@@ -36,6 +37,7 @@ function App() {
             <Route path="/cart" element={Cart} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/address" element={<Address />} />
+            <Route path="/success" element={<OrderSuccess />} />
 
           </Routes>
         </BrowserRouter>

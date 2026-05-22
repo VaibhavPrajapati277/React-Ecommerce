@@ -19,7 +19,7 @@ function Cart() {
 
                     <div
                         key={item.id}
-                        className="flex gap-3 border-b pb-3"
+                        className="flex gap-3 border-b pb-3 mt-4"
                     >
 
                         <img
