@@ -299,82 +299,90 @@ function Home() {
     //     ]
     // );
 
-    const [categories, setcategories] = useState(
-        [
-            {
-                "id": 201,
-                "Categoriesname": "Men",
-                "image": "https://images.unsplash.com/photo-1520975916090-3105956dac38",
-            },
-            {
-                "id": 202,
-                "Categoriesname": "Women",
-                "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b",
-            },
-            {
-                "id": 203,
-                "Categoriesname": "Kids",
-                "image": "https://images.unsplash.com/photo-1503919545889-aef636e10ad4",
-            },
-            {
-                "id": 204,
-                "Categoriesname": "Shoes",
-                "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
-            },
-            {
-                "id": 205,
-                "Categoriesname": "Watches",
-                "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314",
-            },
-            {
-                "id": 206,
-                "Categoriesname": "Sunglasses",
-                "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083",
-            },
-            {
-                "id": 207,
-                "Categoriesname": "Sportswear",
-                "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438",
-            },
-            {
-                "id": 208,
-                "Categoriesname": "Accessories",
-                "image":"https://images.unsplash.com/photo-1505740420928-5e560c06d30e"
-,
-            },
-            {
-                "id": 209,
-                "Categoriesname": "Jwellery",
-                "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338",
-            },
-            {
-                "id": 210,
-                "Categoriesname": "Bags",
-                "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3",
-            },
-        ]
+    const [categories, setcategories] = useState([
+        {
+            id: 201,
+            categoryName: "Men",
+            image:
+                "https://images.unsplash.com/photo-1520975916090-3105956dac38?w=500&auto=format&fit=crop",
+        },
+        {
+            id: 202,
+            categoryName: "Women",
+            image:
+                "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500&auto=format&fit=crop",
+        },
+        {
+            id: 203,
+            categoryName: "Kids",
+            image:
+                "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=500&auto=format&fit=crop",
+        },
+        {
+            id: 204,
+            categoryName: "Shoes",
+            image:
+                "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop",
+        },
+        {
+            id: 205,
+            categoryName: "Watches",
+            image:
+                "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&auto=format&fit=crop",
+        },
+        {
+            id: 206,
+            categoryName: "Sunglasses",
+            image:
+                "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&auto=format&fit=crop",
+        },
+        {
+            id: 207,
+            categoryName: "Sportswear",
+            image:
+                "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500&auto=format&fit=crop",
+        },
+        {
+            id: 208,
+            categoryName: "Accessories",
+            image:
+                "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop",
+        },
+        {
+            id: 209,
+            categoryName: "Jewellery",
+            image:
+                "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&auto=format&fit=crop",
+        },
+        {
+            id: 210,
+            categoryName: "Bags",
+            image:
+                "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&auto=format&fit=crop",
+        },
+    ]
     );
 
 
     return (
         <>
-        
+
             <Header />
             {/* <CarouselComponent /> */}
 
             <Bigcarousal />
             {/* <CategoriesList  title="Categories"  categoriesData={categories} setfunction={setcategories} /> */}
             <CategoriesSwiper title="Shop by Category" categories={categories} setfunction={setcategories} />
-            <Productcart title="Men" data={mendata}  />
-            <Productcart title="women" data={womendata}  />
-            <Productcart title="kids" data={kidsdata}  />
+            <Productcart title="Men" data={mendata} />
+            <Productcart title="women" data={womendata} />
+            <Productcart title="kids" data={kidsdata} />
             {/* <Productcart title="kids" data={kidsdata} setfunction={setKidsData} /> */}
             <Footer />
 
 
-            
+
             <Bottom />
-          
+
 
         </>
     )

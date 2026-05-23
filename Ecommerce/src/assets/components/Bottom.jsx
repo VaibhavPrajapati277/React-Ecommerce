@@ -2,16 +2,27 @@ import { useContext, useState } from "react";
 import { CartContext } from "../../context/Cartcontext";
 import Cart from "../pages/Cart";
 import { Toaster } from "react-hot-toast";
+import { Navigate,useNavigate } from "react-router-dom";
 
 function Bottom() {
     const { data } = useContext(CartContext);
     const [cartOpen, setCartOpen] = useState(false);
+    const navigate = useNavigate();
 
     const totalPrice = data.reduce(
         (total, item) => total + item.price * item.quantity,
         0
     );
-      
+
+    const handleclick = () => {
+        if (data.length > 0) {
+            navigate('/checkout')
+
+        } else {
+            window.alert("Your Cart is empty.")
+        }
+    }
+
 
     return (
         <>
@@ -111,7 +122,9 @@ function Bottom() {
                         </span>
                     </div>
 
-                    <button className="w-full bg-blue-600 hover:bg-blue-700 transition text-white py-3 rounded-xl font-medium">
+                    <button
+                        onClick={handleclick}
+                        className="w-full bg-blue-600 hover:bg-blue-700 transition text-white py-3 rounded-xl font-medium">
                         Checkout
                     </button>
                 </div>

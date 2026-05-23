@@ -17,7 +17,7 @@ function CategoriesList({ categoriesData, title, setfunction }) {
                     {categoriesData.Categoriesname}
                 </h2>
 
-                {/* <button
+                {/* <button 
                     onClick={() => setfunction(categoriesData)}
                     className="bg-blue-500 text-white px-3 py-1 mt-2 rounded hover:bg-blue-600 transition w-full text-sm"
                 >
