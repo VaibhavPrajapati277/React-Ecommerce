@@ -66,7 +66,7 @@ function Checkout() {
                             </div>
                         </div>
         
-                        <button onClick={()=> navigate("/success")} className="w-full mt-6 bg-black text-white py-3 rounded-lg hover:bg-gray-800">
+                        <button onClick={()=> navigate("/success")} className="w-full mt-6 bg-black text-white py-3 rounded-lg hover:bg-gray-800 cursor-pointer">
                             Place Order
                         </button>
                     </div>

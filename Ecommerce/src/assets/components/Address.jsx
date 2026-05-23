@@ -112,7 +112,7 @@ const Address = () => {
                 <button
                     type="submit"
 
-                    className="w-full bg-black hover:bg-gray-800 text-white py-3 rounded-xl font-medium transition"
+                    className="w-full bg-black hover:bg-gray-800 text-white py-3 rounded-xl font-medium transition cursor-pointer"
                 >
                     Save Address
 
