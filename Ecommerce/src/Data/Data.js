@@ -306,3 +306,5 @@ export const kidsdata = [
     discount: "31%",
   },
 ];
+
+

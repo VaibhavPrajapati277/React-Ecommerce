@@ -23,7 +23,7 @@ function Checkout() {
         window.scrollTo(0, 0);
 
     }, []);
-    
+
     return (
         <>
             <Header />
@@ -86,7 +86,7 @@ function Checkout() {
 
                                 {/* COD */}
                                 <label className={`border rounded-lg p-3 flex items-center gap-3 cursor-pointer transition 
-            ${paymentMethod === "cod"
+                                        ${paymentMethod === "cod"
                                         ? "border-black bg-gray-100"
                                         : "border-gray-300"}`}>
 
@@ -107,7 +107,7 @@ function Checkout() {
 
                                 {/* UPI */}
                                 <label className={`border rounded-lg p-3 flex items-center gap-3 cursor-pointer transition 
-            ${paymentMethod === "upi"
+                                         ${paymentMethod === "upi"
                                         ? "border-black bg-gray-100"
                                         : "border-gray-300"}`}>
 
@@ -128,7 +128,7 @@ function Checkout() {
 
                                 {/* Card */}
                                 <label className={`border rounded-lg p-3 flex items-center gap-3 cursor-pointer transition 
-            ${paymentMethod === "card"
+                                     ${paymentMethod === "card"
                                         ? "border-black bg-gray-100"
                                         : "border-gray-300"}`}>
 
@@ -149,7 +149,7 @@ function Checkout() {
 
                                 {/* Wallet */}
                                 <label className={`border rounded-lg p-3 flex items-center gap-3 cursor-pointer transition 
-            ${paymentMethod === "wallet"
+                                            ${paymentMethod === "wallet"
                                         ? "border-black bg-gray-100"
                                         : "border-gray-300"}`}>
 
@@ -172,25 +172,23 @@ function Checkout() {
                         </div>
 
                         <button
-                            disabled={!savedAddress}
+                            disabled={!savedAddress || data.length === 0}
                             onClick={() => {
+
                                 if (paymentMethod === "cod") {
-                                    savedAddress ? navigate("/success") : alert("Please save address first")
-                                }
-                                else {
+                                    savedAddress
+                                        ? navigate("/success")
+                                        : alert("Please save address first")
+                                } else {
                                     alert("Currently only Cash on Delivery is available")
                                 }
                             }}
-                            className={`w-full mt-6 py-3 rounded-lg text-white transition
-
-                                ${savedAddress
-                                    ? "bg-black hover:bg-gray-800 cursor-pointer"
-                                    : "bg-gray-400 cursor-not-allowed"
-                                }`}>
-
-
+                            className={`w-full mt-6 py-3 rounded-lg text-white transition ${(!savedAddress || data.length === 0)
+                                    ? "bg-gray-400 cursor-not-allowed"
+                                    : "bg-black hover:bg-gray-800 cursor-pointer"
+                                }`}
+                        >
                             {paymentMethod === "cod" ? "Place Order" : "Proceed to Payment"}
-
                         </button>
 
                     </div>

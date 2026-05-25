@@ -1,5 +1,5 @@
 function CategoriesList({ categoriesData, title, setfunction }) {
-    
+
     // console.log(categoriesData, "categoriesData in CategoriesList.jsx"); 
 
     return (
@@ -9,12 +9,13 @@ function CategoriesList({ categoriesData, title, setfunction }) {
 
                 <img
                     src={categoriesData.image}
-                    alt={categoriesData.Categoriesname}
+                    alt={categoriesData.categoryName}
+                    
                     className="w-30 h-30 object-cover rounded-lg"
                 />
 
                 <h2 className="font-medium text-gray-600 text-sm text-center mt-2">
-                    {categoriesData.Categoriesname}
+                   {categoriesData.categoryName}
                 </h2>
 
                 {/* <button 

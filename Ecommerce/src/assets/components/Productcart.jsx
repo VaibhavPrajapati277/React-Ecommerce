@@ -44,17 +44,17 @@ function Productcart({ title, data = [] }) {
     };
 
     // ✅ Auto slide
-    // useEffect(() => {
-    //     if (totalSlides <= 1) return;
+    useEffect(() => {
+        if (totalSlides <= 1) return;
 
-    //     const interval = setInterval(() => {
-    //         setCurrentIndex((prev) =>
-    //             prev === totalSlides - 1 ? 0 : prev + 1
-    //         );
-    //     }, 7000);
+        const interval = setInterval(() => {
+            setCurrentIndex((prev) =>
+                prev === totalSlides - 1 ? 0 : prev + 1
+            );
+        }, 7000);
 
-    //     return () => clearInterval(interval);
-    // }, [totalSlides]);
+        return () => clearInterval(interval);
+    }, [totalSlides]);
 
     // ✅ Reset index if needed
     useEffect(() => {

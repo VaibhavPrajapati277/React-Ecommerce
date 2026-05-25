@@ -11,6 +11,7 @@ import Bigcarousal from '../components/Bigcarousal';
 import CategoriesList from '../components/CategoriesList';
 import CategoriesSwiper from '../components/CategoriesSwiper';
 import { kidsdata, mendata, womendata } from '../../Data/Data';
+import ContactUs from './ContactUs';
 // import './App.css'
 
 
@@ -376,6 +377,7 @@ function Home() {
             <Productcart title="Men" data={mendata} />
             <Productcart title="women" data={womendata} />
             <Productcart title="kids" data={kidsdata} />
+            {/* <ContactUs /> */}
             {/* <Productcart title="kids" data={kidsdata} setfunction={setKidsData} /> */}
             <Footer />
 

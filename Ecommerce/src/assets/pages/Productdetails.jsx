@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { mendata, womendata, kidsdata } from "../../Data/Data";
 import { CartContext } from "../../context/Cartcontext";
 import { useContext } from "react";
@@ -10,6 +10,8 @@ import Bottom from "../components/Bottom";
 function Productdetails() {
 
     const { id } = useParams();
+    const navigate = useNavigate();
+    const { data } = useContext(CartContext)
 
     const {
         getdata,
@@ -37,6 +39,12 @@ function Productdetails() {
     const cartItem = cartData.find(
         (item) => item.id === Number(id)
     );
+
+    const handleclick = () => {
+        getdata(product);
+        navigate("/checkout")
+
+    }
 
     return (
         <>
@@ -103,6 +111,7 @@ function Productdetails() {
                         ">
 
                             <button
+                                onClick={handleclick}
                                 className="
                                     bg-blue-600
                                     hover:bg-blue-700
@@ -194,7 +203,7 @@ function Productdetails() {
 
             <Footer />
             <Bottom />
-            
+
         </>
     );
 }
