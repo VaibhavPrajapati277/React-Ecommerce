@@ -1,5 +1,5 @@
 import { Navigate, useNavigate, useParams } from "react-router-dom";
-import { mendata, womendata, kidsdata } from "../../Data/Data";
+import { mendata, womendata, kidsdata, shoesdata, watchdata, sunglassesdata, sportsweardata } from "../../Data/Data";
 import { CartContext } from "../../context/Cartcontext";
 import { useContext } from "react";
 
@@ -21,7 +21,11 @@ function Productdetails() {
     const allProducts = [
         ...mendata,
         ...womendata,
-        ...kidsdata
+        ...kidsdata,
+        ...shoesdata,
+        ...watchdata,
+        ...sunglassesdata,
+        ...sportsweardata
     ];
 
     const product = allProducts.find(
