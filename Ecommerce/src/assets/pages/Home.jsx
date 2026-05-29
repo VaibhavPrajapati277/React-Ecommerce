@@ -72,7 +72,7 @@ function Home() {
         },
         {
             id: 209,
-            categoryName: "Jewellery",
+            categoryName: "Jwellery",
             image:
                 "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&auto=format&fit=crop",
         },
@@ -93,7 +93,7 @@ function Home() {
     const sportswearRef = useRef(null);
     const sunglassesRef = useRef(null);
     const headphonesRef = useRef(null);
-    const jewelleryRef = useRef(null);
+    const jwelleryRef = useRef(null);
     const bagsRef = useRef(null);
 
     // scroll function
@@ -127,13 +127,15 @@ function Home() {
         Sunglasses: sunglassesRef,
         Sportswear: sportswearRef,
         Headphones: headphonesRef,
-        Jewellery: jewelleryRef,
+        Jwellery: jwelleryRef,
         Bags: bagsRef,
     };
 
     return (
         <>
-            <Header />
+            <Header scrollToSection={scrollToSection}
+                categoryRefs={categoryRefs}
+                categories={categories} />
 
             <Bigcarousal />
 
@@ -177,7 +179,7 @@ function Home() {
                 <Productcart title="Headphones" data={headphonesdata} />
             </div>
 
-            <div ref={jewelleryRef}>
+            <div ref={jwelleryRef}>
                 <Productcart title="Jewellery" data={jwellerydata} />
             </div>
 
