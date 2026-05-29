@@ -1,4 +1,5 @@
-function CategoriesList({ categoriesData, title, setfunction }) {
+function CategoriesList({ categoriesData, title, setfunction, scrollToSection,
+    categoryRefs }) {
 
     // console.log(categoriesData, "categoriesData in CategoriesList.jsx"); 
 
@@ -10,12 +11,18 @@ function CategoriesList({ categoriesData, title, setfunction }) {
                 <img
                     src={categoriesData.image}
                     alt={categoriesData.categoryName}
-                    
-                    className="w-30 h-30 object-cover rounded-lg"
+
+                    onClick={() =>
+                        scrollToSection(
+                            categoryRefs[categoriesData.categoryName]
+                        )
+                    }
+
+                    className="w-30 h-30 object-cover rounded-lg cursor-pointer"
                 />
 
                 <h2 className="font-medium text-gray-600 text-sm text-center mt-2">
-                   {categoriesData.categoryName}
+                    {categoriesData.categoryName}
                 </h2>
 
                 {/* <button 

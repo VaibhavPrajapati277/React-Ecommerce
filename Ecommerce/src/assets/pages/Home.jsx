@@ -1,22 +1,25 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Productcart from '../components/Productcart';
 import Bottom from '../components/Bottom';
-import Login from '../components/Login';
-import Signup from '../components/Signup';
-import Resetpass from '../components/Resetpass';
-// import CarouselComponent from '../components/CarouselComponent';
 import Bigcarousal from '../components/Bigcarousal';
-import CategoriesList from '../components/CategoriesList';
 import CategoriesSwiper from '../components/CategoriesSwiper';
-import {  bagdata, headphonesdata, jwellerydata, kidsdata, mendata, shoesdata, sportsweardata, sunglassesdata, watchdata, womendata } from '../../Data/Data';
-import ContactUs from './ContactUs';
-// import './App.css'
 
+import {
+    bagdata,
+    headphonesdata,
+    jwellerydata,
+    kidsdata,
+    mendata,
+    shoesdata,
+    sportsweardata,
+    sunglassesdata,
+    watchdata,
+    womendata
+} from '../../Data/Data';
 
 function Home() {
-
 
     const [categories, setcategories] = useState([
         {
@@ -79,38 +82,111 @@ function Home() {
             image:
                 "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&auto=format&fit=crop",
         },
-    ]
-    );
+    ]);
 
+    // refs
+    const menRef = useRef(null);
+    const womenRef = useRef(null);
+    const kidsRef = useRef(null);
+    const shoesRef = useRef(null);
+    const watchesRef = useRef(null);
+    const sportswearRef = useRef(null);
+    const sunglassesRef = useRef(null);
+    const headphonesRef = useRef(null);
+    const jewelleryRef = useRef(null);
+    const bagsRef = useRef(null);
+
+    // scroll function
+    const scrollToSection = (ref) => {
+
+        const isMobile = window.innerWidth < 768;
+
+        const yOffset = isMobile ? -80 : -120;
+
+
+        const element = ref.current;
+
+        const y =
+            element.getBoundingClientRect().top +
+            window.pageYOffset +
+            yOffset;
+
+        window.scrollTo({
+            top: y,
+            behavior: "smooth",
+        });
+    };
+
+    // mapping
+    const categoryRefs = {
+        Men: menRef,
+        Women: womenRef,
+        Kids: kidsRef,
+        Shoes: shoesRef,
+        Watches: watchesRef,
+        Sunglasses: sunglassesRef,
+        Sportswear: sportswearRef,
+        Headphones: headphonesRef,
+        Jewellery: jewelleryRef,
+        Bags: bagsRef,
+    };
 
     return (
         <>
-
             <Header />
-            {/* <CarouselComponent /> */}
 
             <Bigcarousal />
-            {/* <CategoriesList  title="Categories"  categoriesData={categories} setfunction={setcategories} /> */}
-            <CategoriesSwiper title="Shop by Category" categories={categories} setfunction={setcategories} />
-            <Productcart title="Men" data={mendata} />
-            <Productcart title="Women" data={womendata} />
-            <Productcart title="Kids" data={kidsdata} />
-            <Productcart title="Shoes" data={shoesdata} />
-            <Productcart title="Watches" data={watchdata} />
-            <Productcart title="Sunglasses" data={sunglassesdata} />
-            <Productcart title="Sports" data={sportsweardata} />
-            <Productcart title="Headphones" data={headphonesdata} />
-            <Productcart title="Jwellery" data={jwellerydata} />
-            <Productcart title="Bags" data={bagdata} />
-            {/* <ContactUs /> */}
-            {/* <Productcart title="kids" data={kidsdata} setfunction={setKidsData} /> */}
+
+            <CategoriesSwiper
+                title="Shop by Category"
+                categories={categories}
+                setfunction={setcategories}
+                scrollToSection={scrollToSection}
+                categoryRefs={categoryRefs}
+            />
+
+            <div ref={menRef}>
+                <Productcart title="Men" data={mendata} className="scroll-mt-28" />
+            </div>
+
+            <div ref={womenRef}>
+                <Productcart title="Women" data={womendata} className="scroll-mt-28" />
+            </div>
+
+            <div ref={kidsRef}>
+                <Productcart title="Kids" data={kidsdata} className="scroll-mt-28" />
+            </div>
+
+            <div ref={shoesRef}>
+                <Productcart title="Shoes" data={shoesdata} className="scroll-mt-28" />
+            </div>
+
+            <div ref={watchesRef}>
+                <Productcart title="Watches" data={watchdata} className="scroll-mt-28" />
+            </div>
+
+            <div ref={sunglassesRef}>
+                <Productcart title="Sunglasses" data={sunglassesdata} />
+            </div>
+
+            <div ref={sportswearRef}>
+                <Productcart title="Sportswear" data={sportsweardata} />
+            </div>
+
+            <div ref={headphonesRef}>
+                <Productcart title="Headphones" data={headphonesdata} />
+            </div>
+
+            <div ref={jewelleryRef}>
+                <Productcart title="Jewellery" data={jwellerydata} />
+            </div>
+
+            <div ref={bagsRef}>
+                <Productcart title="Bags" data={bagdata} />
+            </div>
+
             <Footer />
-
-
-
             <Bottom />
-
-
         </>
     )
 }

@@ -1,7 +1,8 @@
 import { useState, useEffect, useMemo } from "react";
 import CategoriesList from "./CategoriesList";
 
-function CategoriesSwiper({ categories = [], setfunction, title }) {
+function CategoriesSwiper({ categories = [], setfunction, title, scrollToSection,
+    categoryRefs }) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [chunkSize, setChunkSize] = useState(6);
 
@@ -117,6 +118,9 @@ function CategoriesSwiper({ categories = [], setfunction, title }) {
                                         key={item.id}
                                         categoriesData={item}
                                         setfunction={setfunction}
+
+                                        scrollToSection={scrollToSection}
+                                        categoryRefs={categoryRefs}
                                     />
                                 ))}
                             </div>
