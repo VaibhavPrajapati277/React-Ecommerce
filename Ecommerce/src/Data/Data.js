@@ -745,7 +745,7 @@ export const sportsweardata = [
     brand: "Nike",
     name: "Trackpant & T-shirt combo ",
     image:
-     "https://images.unsplash.com/photo-1540254597053-3901b858d40f?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1540254597053-3901b858d40f?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: 1499,
     originalPrice: 2199,
     discount: "32%",
@@ -859,5 +859,375 @@ export const sportsweardata = [
     price: 1399,
     originalPrice: 1999,
     discount: "30%",
+  },
+];
+
+export const headphonesdata = [
+  {
+    id: 85,
+    brand: "Boat",
+    name: "Wireless Bluetooth Headphones",
+    image:
+      "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=500&auto=format&fit=crop",
+    price: 2499,
+    originalPrice: 3499,
+    discount: "29%",
+  },
+  {
+    id: 86,
+    brand: "Noise",
+    name: "True Wireless Earbuds",
+    image:
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop",
+    price: 1999,
+    originalPrice: 2999,
+    discount: "33%",
+  },
+  {
+    id: 87,
+    brand: "JBL",
+    name: "Bluetooth Neckband Earphones",
+    image:
+      "https://images.unsplash.com/photo-1577174881658-0f30ed549adc?w=500&auto=format&fit=crop",
+    price: 1799,
+    originalPrice: 2599,
+    discount: "31%",
+  },
+  {
+    id: 88,
+    brand: "Sony",
+    name: "Noise Cancelling Headphones",
+    image:
+      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500&auto=format&fit=crop",
+    price: 5999,
+    originalPrice: 7999,
+    discount: "25%",
+  },
+  {
+    id: 89,
+    brand: "Realme",
+    name: "Wireless Bluetooth Earbuds",
+    image:
+      "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=500&auto=format&fit=crop",
+    price: 2299,
+    originalPrice: 3299,
+    discount: "30%",
+  },
+  {
+    id: 90,
+    brand: "OnePlus",
+    name: "Bass Boost Bluetooth Earphones",
+    image:
+      "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500&auto=format&fit=crop",
+    price: 2499,
+    originalPrice: 3599,
+    discount: "31%",
+  },
+  {
+    id: 91,
+    brand: "Boult",
+    name: "Gaming Wireless Earbuds",
+    image:
+      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&auto=format&fit=crop",
+    price: 1899,
+    originalPrice: 2799,
+    discount: "32%",
+  },
+  {
+    id: 92,
+    brand: "Skullcandy",
+    name: "Over Ear Bluetooth Headphones",
+    image:
+      "https://images.unsplash.com/photo-1507878866276-a947ef722fee?w=500&auto=format&fit=crop",
+    price: 4499,
+    originalPrice: 5999,
+    discount: "25%",
+  },
+  {
+    id: 93,
+    brand: "Ptron",
+    name: "Mini Wireless Earbuds",
+    image:
+      "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500&auto=format&fit=crop",
+    price: 1499,
+    originalPrice: 2299,
+    discount: "35%",
+  },
+  {
+    id: 94,
+    brand: "Sennheiser",
+    name: "Premium Studio Headphones",
+    image:
+      "https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?w=500&auto=format&fit=crop",
+    price: 7999,
+    originalPrice: 9999,
+    discount: "20%",
+  },
+  {
+    id: 95,
+    brand: "Beats",
+    name: "Wireless Music Headphones",
+    image:
+      "https://images.unsplash.com/photo-1487215078519-e21cc028cb29?w=500&auto=format&fit=crop",
+    price: 6999,
+    originalPrice: 8999,
+    discount: "22%",
+  },
+  {
+    id: 96,
+    brand: "Mivi",
+    name: "Bluetooth Sports Earbuds",
+    image:
+      "https://images.unsplash.com/photo-1608156639585-b3a032ef9689?w=500&auto=format&fit=crop",
+    price: 1699,
+    originalPrice: 2499,
+    discount: "32%",
+  },
+];
+
+
+export const jwellerydata = [
+  {
+    id: 97,
+    brand: "Tanishq",
+    name: "Gold Plated Necklace Set",
+    image:
+      "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=500&auto=format&fit=crop",
+    price: 4999,
+    originalPrice: 6999,
+    discount: "29%",
+  },
+  {
+    id: 98,
+    brand: "Malabar Gold",
+    name: "Traditional Gold Earrings",
+    image:
+      "https://images.unsplash.com/photo-1635767798638-3e25273a8236?w=500&auto=format&fit=crop",
+    price: 3499,
+    originalPrice: 4999,
+    discount: "30%",
+  },
+  {
+    id: 99,
+    brand: "Kalyan Jewellers",
+    name: "Diamond Ring for Women",
+    image:
+      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&auto=format&fit=crop",
+    price: 7999,
+    originalPrice: 10999,
+    discount: "27%",
+  },
+  {
+    id: 100,
+    brand: "PC Jeweller",
+    name: "Silver Chain Necklace",
+    image:
+      "https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=500&auto=format&fit=crop",
+    price: 2299,
+    originalPrice: 3499,
+    discount: "34%",
+  },
+  {
+    id: 101,
+    brand: "BlueStone",
+    name: "Rose Gold Bracelet",
+    image:
+      "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=500&auto=format&fit=crop",
+    price: 2899,
+    originalPrice: 4299,
+    discount: "33%",
+  },
+  {
+    id: 102,
+    brand: "Voylla",
+    name: "Designer Jhumka Earrings",
+    image:
+      "https://images.unsplash.com/photo-1626784215021-2e39ccf971cd?w=500&auto=format&fit=crop",
+    price: 1599,
+    originalPrice: 2499,
+    discount: "36%",
+  },
+  {
+    id: 103,
+    brand: "Zaveri Pearls",
+    name: "Pearl Jewellery Set",
+    image:
+      "https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?w=500&auto=format&fit=crop",
+    price: 3799,
+    originalPrice: 5299,
+    discount: "28%",
+  },
+  {
+    id: 104,
+    brand: "Senco Gold",
+    name: "Antique Gold Bangles",
+    image:
+      "https://images.unsplash.com/photo-1619119069152-a2b331eb392a?w=500&auto=format&fit=crop",
+    price: 4599,
+    originalPrice: 6499,
+    discount: "29%",
+  },
+  {
+    id: 105,
+    brand: "Giva",
+    name: "Minimal Silver Pendant",
+    image:
+      "https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=500&auto=format&fit=crop",
+    price: 1899,
+    originalPrice: 2799,
+    discount: "32%",
+  },
+  {
+    id: 106,
+    brand: "Candere",
+    name: "Diamond Stud Earrings",
+    image:
+      "https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=500&auto=format&fit=crop",
+    price: 5599,
+    originalPrice: 7499,
+    discount: "25%",
+  },
+  {
+    id: 107,
+    brand: "Mia",
+    name: "Elegant Finger Ring",
+    image:
+      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&auto=format&fit=crop",
+    price: 2499,
+    originalPrice: 3599,
+    discount: "31%",
+  },
+  {
+    id: 108,
+    brand: "CaratLane",
+    name: "Stylish Heart Pendant",
+    image:
+     "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&auto=format&fit=crop",
+    price: 3299,
+    originalPrice: 4599,
+    discount: "28%",
+  },
+];
+
+export const bagdata = [
+  {
+    id: 109,
+    brand: "Wildcraft",
+    name: "Travel Hiking Backpack",
+    image:
+      "https://images.unsplash.com/photo-1581605405669-fcdf81165afa?w=500&auto=format&fit=crop",
+    price: 2499,
+    originalPrice: 3499,
+    discount: "29%",
+  },
+  {
+    id: 110,
+    brand: "Skybags",
+    name: "Casual College Backpack",
+    image:
+     "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&auto=format&fit=crop",
+    price: 1999,
+    originalPrice: 2899,
+    discount: "31%",
+  },
+  {
+    id: 111,
+    brand: "American Tourister",
+    name: "Laptop Office Backpack",
+    image:
+      "https://images.unsplash.com/photo-1547949003-9792a18a2601?w=500&auto=format&fit=crop",
+    price: 2799,
+    originalPrice: 3999,
+    discount: "30%",
+  },
+  {
+    id: 112,
+    brand: "Puma",
+    name: "Sports Gym Duffel Bag",
+    image:
+      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=500&auto=format&fit=crop",
+    price: 1899,
+    originalPrice: 2799,
+    discount: "32%",
+  },
+  {
+    id: 113,
+    brand: "Nike",
+    name: "Training Shoulder Bag",
+    image:
+     "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&auto=format&fit=crop",
+    price: 1699,
+    originalPrice: 2499,
+    discount: "32%",
+  },
+  {
+    id: 114,
+    brand: "Lavie",
+    name: "Women Stylish Handbag",
+    image:
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&auto=format&fit=crop",
+    price: 2299,
+    originalPrice: 3299,
+    discount: "30%",
+  },
+  {
+    id: 115,
+    brand: "Caprese",
+    name: "Designer Tote Bag",
+    image:
+      "https://images.unsplash.com/photo-1591561954557-26941169b49e?w=500&auto=format&fit=crop",
+    price: 2599,
+    originalPrice: 3699,
+    discount: "30%",
+  },
+  {
+    id: 116,
+    brand: "Baggit",
+    name: "Women Sling Side Bag",
+    image:
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&auto=format&fit=crop",
+    price: 1799,
+    originalPrice: 2699,
+    discount: "33%",
+  },
+  {
+    id: 117,
+    brand: "Safari",
+    name: "Large Travel Trolley Bag",
+    image:
+  "https://images.unsplash.com/photo-1581553680321-4fffae59fccd?w=500&auto=format&fit=crop",
+    price: 4999,
+    originalPrice: 6999,
+    discount: "29%",
+  },
+  {
+    id: 118,
+    brand: "Tommy Hilfiger",
+    name: "Premium Leather Backpack",
+    image:
+      "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=500&auto=format&fit=crop",
+    price: 3499,
+    originalPrice: 4999,
+    discount: "30%",
+  },
+  {
+    id: 119,
+    brand: "Adidas",
+    name: "Sports Training Backpack",
+    image:
+  "https://images.unsplash.com/photo-1591561954557-26941169b49e?w=500&auto=format&fit=crop",
+    price: 2199,
+    originalPrice: 3199,
+    discount: "31%",
+  },
+  {
+    id: 120,
+    brand: "Gucci",
+    name: "Luxury Fashion Handbag",
+    image:
+     "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&auto=format&fit=crop",
+    price: 7999,
+    originalPrice: 10999,
+    discount: "27%",
   },
 ];

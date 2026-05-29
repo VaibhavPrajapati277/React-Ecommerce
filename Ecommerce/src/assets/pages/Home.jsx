@@ -10,7 +10,7 @@ import Resetpass from '../components/Resetpass';
 import Bigcarousal from '../components/Bigcarousal';
 import CategoriesList from '../components/CategoriesList';
 import CategoriesSwiper from '../components/CategoriesSwiper';
-import { kidsdata, mendata, shoesdata, sportsweardata, sunglassesdata, watchdata, womendata } from '../../Data/Data';
+import {  bagdata, headphonesdata, jwellerydata, kidsdata, mendata, shoesdata, sportsweardata, sunglassesdata, watchdata, womendata } from '../../Data/Data';
 import ContactUs from './ContactUs';
 // import './App.css'
 
@@ -35,7 +35,7 @@ function Home() {
             id: 203,
             categoryName: "Kids",
             image:
-                "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=500&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=500&auto=format&fit=crop",
         },
         {
             id: 204,
@@ -63,7 +63,7 @@ function Home() {
         },
         {
             id: 208,
-            categoryName: "Accessories",
+            categoryName: "Headphones",
             image:
                 "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop",
         },
@@ -99,6 +99,9 @@ function Home() {
             <Productcart title="Watches" data={watchdata} />
             <Productcart title="Sunglasses" data={sunglassesdata} />
             <Productcart title="Sports" data={sportsweardata} />
+            <Productcart title="Headphones" data={headphonesdata} />
+            <Productcart title="Jwellery" data={jwellerydata} />
+            <Productcart title="Bags" data={bagdata} />
             {/* <ContactUs /> */}
             {/* <Productcart title="kids" data={kidsdata} setfunction={setKidsData} /> */}
             <Footer />

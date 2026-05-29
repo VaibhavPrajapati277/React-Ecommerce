@@ -1,5 +1,5 @@
 import { Navigate, useNavigate, useParams } from "react-router-dom";
-import { mendata, womendata, kidsdata, shoesdata, watchdata, sunglassesdata, sportsweardata } from "../../Data/Data";
+import { mendata, womendata, kidsdata, shoesdata, watchdata, sunglassesdata, sportsweardata, headphonesdata, jwellerydata, bagdata } from "../../Data/Data";
 import { CartContext } from "../../context/Cartcontext";
 import { useContext } from "react";
 
@@ -25,7 +25,10 @@ function Productdetails() {
         ...shoesdata,
         ...watchdata,
         ...sunglassesdata,
-        ...sportsweardata
+        ...sportsweardata,
+        ...headphonesdata,
+        ...jwellerydata,
+        ...bagdata
     ];
 
     const product = allProducts.find(
@@ -162,7 +165,7 @@ function Productdetails() {
                         }
 
                         {/* Size Section */}
-                        <div className="mt-10">
+                        {/* <div className="mt-10">
 
                             <h2 className="text-2xl font-semibold mb-5">
                                 Select Size
@@ -197,7 +200,7 @@ function Productdetails() {
 
                             </div>
 
-                        </div>
+                        </div> */}
 
                     </div>
 
