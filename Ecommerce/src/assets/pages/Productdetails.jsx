@@ -50,7 +50,6 @@ function Productdetails() {
     const handleclick = () => {
         getdata(product);
         navigate("/checkout")
-
     }
 
     return (
