@@ -56,13 +56,50 @@ function Header({ scrollToSection, categoryRefs, categories }) {
     <>
       <header className="sticky top-0 z-50 bg-white shadow-md">
         <div className="px-8 py-4 flex items-center justify-between">
-          <div className="font-bold  text-blue-500 ">MyShop</div>
-          <button
-            className="md:hidden text-2xl "
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            ☰
-          </button>
+          <div className="font-bold text-blue-500">MyShop</div>
+
+          <div className="flex items-center gap-3 md:hidden">
+            {/* Search */}
+            <button onClick={() => setShowSearch(!showSearch)}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                />
+              </svg>
+            </button>
+
+            {/* Login */}
+            <button onClick={() => navigate("/login")}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                />
+              </svg>
+            </button>
+
+            {/* Menu */}
+            <button className="text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
+              ☰
+            </button>
+          </div>
           <nav className=" hidden md:flex justify-start space-x-8 text-gray-700 font-medium">
             {/* <a href={Home} className="hover:text-blue-600 transition">Home</a> */}
             <Link to="/" className="hover:text-blue-600 transition">
@@ -81,8 +118,6 @@ function Header({ scrollToSection, categoryRefs, categories }) {
           </nav>
 
           <div className="hidden md:flex gap-4 flex items-center">
-            {/* Searchbar */}
-
             {/* Searchbar */}
             <div className="flex items-center gap-2 transition-all duration-300">
               {/* Search Input */}
@@ -316,6 +351,65 @@ function Header({ scrollToSection, categoryRefs, categories }) {
                         </button> */}
           </div>
         </div>
+        {showSearch && (
+          <div className="md:hidden px-4 pb-3">
+            <div className="flex items-center gap-2">
+              <input
+                type="text"
+                placeholder="Search..."
+                value={search}
+                onChange={(e) => {
+                  const value = e.target.value;
+
+                  setSearch(value);
+
+                  const filtered = categories.filter((item) =>
+                    item.categoryName
+                      .toLowerCase()
+                      .includes(value.toLowerCase()),
+                  );
+
+                  setFilteredCategories(filtered);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    handleSearch();
+                  }
+                }}
+                className="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+
+              <button
+                onClick={() => {
+                  setShowSearch(false);
+                  setSearch("");
+                }}
+                className="px-4 py-2 border rounded-lg"
+              >
+                ✕
+              </button>
+            </div>
+
+            {search && filteredCategories.length > 0 && (
+              <div className="bg-white border rounded-lg mt-1 shadow-lg">
+                {filteredCategories.map((item) => (
+                  <p
+                    key={item.id}
+                    onClick={() => {
+                      scrollToSection(categoryRefs[item.categoryName]);
+                      setSearch("");
+                      setShowSearch(false);
+                    }}
+                    className="p-2 hover:bg-gray-100 cursor-pointer"
+                  >
+                    {item.categoryName}
+                  </p>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
         {menuOpen && (
           <nav className="flex flex-col items-center  mr-4px text-gray-700 font-medium px-6 py-2 space-y-4 ">
             {/* <a href="#" className="hover:text-blue-600 transition">Home</a> */}

@@ -61,7 +61,7 @@ function Resetpass() {
                             <p className="text-center text-gray-600 text-sm mt-6">
                                 Back to Log?{" "}
 
-                                <Link to="/login" className="text-blue-500 hover:underline">Back to Log?</Link>
+                                <Link to="/login" className="text-blue-500 hover:underline">Click Here?</Link>
                             </p>
                         </div>
                     </div>

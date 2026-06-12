@@ -31,13 +31,13 @@ const Address = ({ savedAddress, setSavedAddress }) => {
 
             <div className="flex items-center justify-between mb-5">
                 <h2 className="text-xl font-semibold">
-                    Delivery Address
+                    Delivery Address*
                 </h2>
 
                 <span className="text-sm text-gray-500">
                     Fast Delivery
                 </span>
-
+        
             </div>
             {
                 showForm ? (
