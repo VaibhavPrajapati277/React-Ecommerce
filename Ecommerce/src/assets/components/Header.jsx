@@ -58,7 +58,7 @@ function Header({ scrollToSection, categoryRefs, categories }) {
         <div className="px-8 py-4 flex items-center justify-between">
           <div className="font-bold text-blue-500">MyShop</div>
 
-          <div className="flex items-center gap-3 md:hidden">
+          <div className="flex items-center justify-center gap-5 md:hidden">
             {/* Search */}
             <button onClick={() => setShowSearch(!showSearch)}>
               <svg
@@ -75,7 +75,7 @@ function Header({ scrollToSection, categoryRefs, categories }) {
                   d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
                 />
               </svg>
-            </button>
+            </button>  
 
             {/* Login */}
             <button onClick={() => navigate("/login")}>
@@ -96,7 +96,7 @@ function Header({ scrollToSection, categoryRefs, categories }) {
             </button>
 
             {/* Menu */}
-            <button className="text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
+            <button className="flex items-center justify-center w-8 h-8 text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
               ☰
             </button>
           </div>
