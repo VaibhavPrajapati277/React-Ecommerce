@@ -2,6 +2,7 @@ import { useState } from "react";
 import Footer from "./Footer"
 import Header from "./Header"
 import { Link } from "react-router-dom";
+import Bottom from "./Bottom";
 
 function Login() {
 
@@ -10,7 +11,7 @@ function Login() {
     return (
 
         <>
-            <div className="flex flex-col justify-between h-screen bg-gray-200">
+           <div className="flex flex-col justify-between min-h-screen bg-gray-200 pb-16 md:pb-0">
 
                 <Header />
                 <div className=" flex flex-col p-3">
@@ -121,12 +122,9 @@ function Login() {
                     </div>
                 </div>
                 <Footer />
-
-
-
-
             </div>
-
+            
+        <Bottom />
 
 
 
