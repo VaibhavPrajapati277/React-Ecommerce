@@ -11,8 +11,11 @@ import { Toaster } from "react-hot-toast";
 import Cart from "./assets/pages/Cart";
 
 import Checkout from './assets/pages/Checkout'
+import ContactUs from './assets/pages/ContactUs'
 import Address from './assets/components/Address'
 import OrderSuccess from './assets/components/OrderSuccess'
+import AboutUs from './assets/pages/AboutUs'
+import Support from './assets/pages/Support'
 function App() {
 
 
@@ -34,6 +37,10 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/address" element={<Address />} />
             <Route path="/success" element={<OrderSuccess />} />
+            <Route path="/contactus" element={<ContactUs />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/support" element={<Support />} />
+
 
           </Routes>
         </BrowserRouter>

@@ -106,13 +106,13 @@ function Header({ scrollToSection, categoryRefs, categories }) {
               Home
             </Link>
 
-            <a href="#" className="hover:text-blue-600 transition">
+            <a href="/contactus" className="hover:text-blue-600 transition">
               Contact Us
             </a>
-            <a href="#" className="hover:text-blue-600 transition">
+            <a href="/aboutus" className="hover:text-blue-600 transition">
               About Us
             </a>
-            <a href="#" className="hover:text-blue-600 transition">
+            <a href="/support" className="hover:text-blue-600 transition">
               Support
             </a>
           </nav>
@@ -416,13 +416,13 @@ function Header({ scrollToSection, categoryRefs, categories }) {
             <Link to="/" className="hover:text-blue-600 transition">
               Home
             </Link>
-            <a href="#" className="hover:text-blue-600 transition">
+            <a href="contactus" className="hover:text-blue-600 transition">
               Contact Us
             </a>
-            <a href="#" className="hover:text-blue-600 transition">
+            <a href="/aboutus" className="hover:text-blue-600 transition">
               About Us
             </a>
-            <a href="#" className="hover:text-blue-600 transition">
+            <a href="support" className="hover:text-blue-600 transition">
               Support
             </a>
           </nav>

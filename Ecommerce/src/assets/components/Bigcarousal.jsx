@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 
 function Bigcarousal() {
     const images = [
+        "/images/Mybanner.png",
         "/images/Banner1.jpg",
-        "/images/Banner2.jpg",
         "/images/Banner3.webp",
     ];
 
@@ -27,7 +27,7 @@ function Bigcarousal() {
             setCurrentIndex((prev) =>
                 prev === images.length - 1 ? 0 : prev + 1
             );
-        }, 3000);
+        }, 5000);
 
         return () => clearInterval(interval);
     }, []);
